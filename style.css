@@ -1,0 +1,279 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: linear-gradient(to bottom right, #faf5ff, #eff6ff, #fdf2f8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 28rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 0.625rem;
+  padding: 2rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 1.875rem;
+  margin: 0 0 0.5rem;
+  font-weight: 500;
+}
+
+.header .subtitle {
+  color: #4b5563;
+  margin: 0;
+}
+
+.timer-wrap {
+  position: relative;
+  width: 16rem;
+  height: 16rem;
+  margin: 0 auto 2rem;
+}
+
+.timer-svg {
+  transform: rotate(-90deg);
+  width: 16rem;
+  height: 16rem;
+}
+
+.timer-bg {
+  fill: none;
+  stroke: #e5e7eb;
+  stroke-width: 12;
+}
+
+.timer-progress {
+  fill: none;
+  stroke-width: 12;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.3s, stroke 0.3s;
+}
+
+.timer-progress.work {
+  stroke: #ef4444;
+}
+
+.timer-progress.break {
+  stroke: #10b981;
+}
+
+.timer-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timer-display {
+  text-align: center;
+}
+
+.timer-time {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.timer-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn-primary {
+  color: #fff;
+}
+
+.btn-primary.work {
+  background: #ef4444;
+}
+
+.btn-primary.work:hover {
+  background: #dc2626;
+}
+
+.btn-primary.break {
+  background: #10b981;
+}
+
+.btn-primary.break:hover {
+  background: #059669;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+.btn-outline:hover {
+  background: #f9fafb;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #374151;
+  width: 100%;
+}
+
+.btn-ghost:hover {
+  background: #f3f4f6;
+}
+
+.completed-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 0.5rem;
+}
+
+.completed-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.completed-label svg {
+  color: #10b981;
+}
+
+.completed-count {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.settings-btn-wrap {
+  margin-top: 1rem;
+}
+
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
+
+.icon-sm {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Modal */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  padding: 1rem;
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 0.625rem;
+  padding: 1.5rem;
+  max-width: 24rem;
+  width: 100%;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.modal h2 {
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.modal .field {
+  margin-bottom: 1rem;
+}
+
+.modal label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.modal input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+}
+
+.modal .apply-btn {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.info-box {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #4b5563;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.info-box h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.info-box p {
+  margin: 0;
+}
